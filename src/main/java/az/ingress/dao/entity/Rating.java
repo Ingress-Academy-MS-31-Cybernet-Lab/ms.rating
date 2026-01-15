@@ -13,6 +13,7 @@ import static javax.persistence.GenerationType.IDENTITY;
 @Entity
 @Getter
 @Setter
+@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Table(name = "rating")
 @Builder
 @NoArgsConstructor
@@ -20,6 +21,7 @@ import static javax.persistence.GenerationType.IDENTITY;
 public class Rating {
     @Id
     @GeneratedValue(strategy = IDENTITY)
+    @EqualsAndHashCode.Include
     private UUID id;
 
     private String productId;
