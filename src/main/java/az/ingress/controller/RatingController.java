@@ -1,6 +1,7 @@
 package az.ingress.controller;
 
 import az.ingress.model.request.RatingCreateRequest;
+import az.ingress.model.response.RatingCommonResponse;
 import az.ingress.model.response.RatingResponse;
 import az.ingress.service.abstracts.RatingService;
 import lombok.RequiredArgsConstructor;
@@ -25,26 +26,26 @@ public class RatingController {
     }
 
     @PutMapping("/{id}")
-    public  RatingResponse  getRating(@PathVariable UUID ratingId) {
-        return ratingService.getRating(ratingId);
+    public RatingResponse getRating(@PathVariable UUID id) {
+        return ratingService.getRating(id);
     }
 
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void deleteRating(@PathVariable UUID ratingId) {
-        ratingService.deleteRating(ratingId);
+    public void deleteRating(@PathVariable UUID id) {
+        ratingService.deleteRating(id);
     }
 
     @GetMapping("/product/{productId}")
     @ResponseStatus(HttpStatus.OK)
-    public List<RatingResponse> getProductRatings(@PathVariable UUID productId) {
+    public List<RatingCommonResponse> getProductRatings(@PathVariable UUID productId) {
         return ratingService.getProductRatings( productId);
     }
 
     @GetMapping("/user/{userId}")
     @ResponseStatus(HttpStatus.OK)
-    public List<RatingResponse> getUserRating(@PathVariable UUID productId) {
-        return ratingService.getUserRating( productId);
+    public List<RatingCommonResponse> getUserRating(@PathVariable UUID userId) {
+        return ratingService.getUserRating(userId);
     }
 
 

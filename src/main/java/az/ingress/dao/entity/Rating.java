@@ -27,6 +27,8 @@ public class Rating {
     private String productId;
     private String userId;
     private int ratingValue;
+    @Enumerated(EnumType.STRING)
+    private String status;
 
     @CreationTimestamp
     private LocalDateTime createdAt;

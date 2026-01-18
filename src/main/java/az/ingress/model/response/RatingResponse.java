@@ -1,8 +1,13 @@
 package az.ingress.model.response;
 
-public  class RatingResponse {
-    public String productId;
+import lombok.Builder;
+
+import java.time.LocalDateTime;
+
+@Builder
+public class RatingResponse {
     public String userId;
-    public Double averageRating;
-    public int ratingCount;
+    public int rating;
+    public String productId;
+    public LocalDateTime lastProccessedTime;
 }

@@ -1,6 +1,7 @@
 package az.ingress.service.abstracts;
 
 import az.ingress.model.request.RatingCreateRequest;
+import az.ingress.model.response.RatingCommonResponse;
 import az.ingress.model.response.RatingResponse;
 
 import java.util.List;
@@ -13,7 +14,7 @@ public interface  RatingService {
 
     void deleteRating(UUID ratingId);
 
-    List<RatingResponse> getProductRatings(UUID productId);
+    List<RatingCommonResponse> getProductRatings(UUID productId);
 
-    List<RatingResponse> getUserRating(UUID productId);
+    List<RatingCommonResponse> getUserRating(UUID productId);
 }
