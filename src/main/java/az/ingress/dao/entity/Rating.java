@@ -1,5 +1,6 @@
 package az.ingress.dao.entity;
 
+import az.ingress.model.enums.RatingStatus;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -28,7 +29,7 @@ public class Rating {
     private String userId;
     private int ratingValue;
     @Enumerated(EnumType.STRING)
-    private String status;
+    private RatingStatus status;
 
     @CreationTimestamp
     private LocalDateTime createdAt;

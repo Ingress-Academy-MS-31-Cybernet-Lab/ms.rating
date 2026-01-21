@@ -38,7 +38,7 @@ public class RatingController {
 
     @GetMapping("/product/{productId}")
     @ResponseStatus(HttpStatus.OK)
-    public List<RatingCommonResponse> getProductRatings(@PathVariable UUID productId) {
+    public List<RatingResponse> getProductRatings(@PathVariable UUID productId) {
         return ratingService.getProductRatings( productId);
     }
 

@@ -2,7 +2,6 @@ package az.ingress.mapper;
 
 import az.ingress.dao.entity.Rating;
 import az.ingress.model.request.RatingCreateRequest;
-import az.ingress.model.response.RatingCommonResponse;
 import az.ingress.model.response.RatingResponse;
 
 import java.time.LocalDateTime;

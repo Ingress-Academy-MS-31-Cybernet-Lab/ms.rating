@@ -7,6 +7,7 @@ import javax.persistence.*;
 @Entity
 @Getter
 @Setter
+@Builder
 @AllArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @NoArgsConstructor
@@ -17,4 +18,10 @@ public class ProductRatingSummary {
     private String productId;
     private Double averageRating;
     private int ratingCount;
+    private int ratingSum;
+
+    @Transient
+    public double getAverageRating() {
+        return ratingCount > 0 ? (double) ratingSum / ratingCount : 0.0;
+    }
 }

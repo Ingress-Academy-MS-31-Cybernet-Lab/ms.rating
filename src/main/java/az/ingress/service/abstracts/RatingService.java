@@ -14,7 +14,9 @@ public interface  RatingService {
 
     void deleteRating(UUID ratingId);
 
-    List<RatingCommonResponse> getProductRatings(UUID productId);
+    List<RatingResponse> getProductRatings(UUID productId);
 
     List<RatingCommonResponse> getUserRating(UUID productId);
+
+    RatingCommonResponse getProductAverageRating(UUID productId);
 }
